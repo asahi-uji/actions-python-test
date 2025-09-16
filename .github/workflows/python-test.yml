@@ -1,11 +1,11 @@
-name: Python Test on GitHub-hosted Runner
+name: Run main.py on GitHub-hosted Runner
 
 on:
   push:
   workflow_dispatch:
 
 jobs:
-  test:
+  run-main:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -16,8 +16,5 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Run Python script
-        run: |
-          python --version
-          echo "print('Hello from GitHub Actions')" > hello.py
-          python hello.py
+      - name: Run main.py
+        run: python main.py
